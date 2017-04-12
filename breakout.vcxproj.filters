@@ -19,4 +19,18 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameObject.h">
+      <Filter>Quelldateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Quelldateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Ball.h">
+      <Filter>Quelldateien</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Quelldateien</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
