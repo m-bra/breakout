@@ -18,7 +18,7 @@ class GameObject
 {
 public:
 
-	GameObject(World *world, sf::Shape *shape, Rectangle box) 
+	GameObject(World *world, sf::Shape *shape, Rectangle box)
 		: world(world), visibleShape(shape), collisionBox(box) {}
 
 	// access to the collision box
@@ -32,6 +32,11 @@ public:
 	void setVisibleShape(sf::Shape *s) { visibleShape = s; }
 
 	World *getWorld() { return world; }
+
+	void update(float time)
+	{
+
+	}
 
 	// helper functions:
 
@@ -54,9 +59,11 @@ public:
 	}
 
 private:
-	Rectangle collisionBox;
-	sf::Shape *visibleShape;
 	World *world;
+	sf::Shape *visibleShape;
+	Rectangle collisionBox;
+
+
 };
 
 #endif

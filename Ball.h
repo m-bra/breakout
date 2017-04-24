@@ -2,10 +2,18 @@
 #define BALL_H_INCLUDED
 
 #include "GameObject.h"
+#include "SFML/Graphics.hpp"
 
 class Ball : public GameObject
 {
 public:
+	static constexpr float RADIUS = 25;
+
+	Ball(World *world, float x, float y) :
+		GameObject(world, new sf::CircleShape(RADIUS), rect(x, y, RADIUS * 2, RADIUS * 2))
+	{
+
+	}
 
 	void move(float time)
 	{
