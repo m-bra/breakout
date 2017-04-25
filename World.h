@@ -2,26 +2,24 @@
 #define WORLD_H_INCLUDED
 
 #include "GameObject.h"
-#include "SFML/Window.hpp"
+#include <SFML/Graphics.hpp>
 
-#define MAX_OBJECTS 64
+#define MAX_OBJECTS 24
 
 class World
 {
 public:
 
-	void update(float time)
-	{
+	World(float width, float height);
 
-	}
-
-	void draw(sf::Window *window)
-	{
-		for (int i = 0; i < MAX_OBJECTS; ++i)
-			window->draw(objects[i]->getVisibleShape());
-	}
+	bool update(float time);
+	void draw(class sf::RenderWindow *window);
+	void movePaddle(float x);
 
 private:
+	float width, height;
+	class Ball *ball;
+	GameObject *paddle;
 	GameObject *objects[MAX_OBJECTS];
 };
 

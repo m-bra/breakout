@@ -7,12 +7,30 @@
 class Ball : public GameObject
 {
 public:
-	static constexpr float RADIUS = 25;
+	static constexpr float PIXEL_SIZE = 4;
+	static constexpr float RADIUS = PIXEL_SIZE * 4;
+
+	/// the current moving direction
+	float moveX = 250, moveY = 250;
+
+	static sf::Texture *getTexture()
+	{
+		static sf::Texture *texture = 0;
+
+		if (!texture)
+		{
+			texture = new sf::Texture;
+			texture->loadFromFile("ball.png");
+		}
+
+		return texture;
+	}
 
 	Ball(World *world, float x, float y) :
-		GameObject(world, new sf::CircleShape(RADIUS), rect(x, y, RADIUS * 2, RADIUS * 2))
+		GameObject(world, 0, rect_t(x, y, RADIUS * 2, RADIUS * 2))
 	{
-
+		setVisibleShape(new sf::RectangleShape(sf::Vector2f(RADIUS * 2, RADIUS * 2)));
+		getVisibleShape()->setTexture(getTexture());
 	}
 
 	void move(float time)
@@ -46,8 +64,7 @@ public:
 	}
 
 private:
-	/// the current moving direction
-	float moveX, moveY;
+	float jumpBy = PIXEL_SIZE;
 };
 
 #endif
