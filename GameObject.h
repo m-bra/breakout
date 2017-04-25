@@ -32,31 +32,12 @@ public:
 	void setVisibleShape(sf::Shape *s) { visibleShape = s; }
 
 	World *getWorld() { return world; }
-
-	void update(float time)
-	{
-
-	}
-
 	// helper functions:
 
 	// move by given distances
-	void moveBy(float x, float y)
-	{
-		Rectangle box = getCollisionBox();
-		box.x += x;
-		box.y += y;
-		setCollisionBox(box);
-	}
-
+	void moveBy(float x, float y);
 	// jump to position
-	void jumpTo(float x, float y)
-	{
-		Rectangle box = getCollisionBox();
-		box.x = x;
-		box.y = y;
-		setCollisionBox(box);
-	}
+	void jumpTo(float x, float y);
 
 private:
 	World *world;

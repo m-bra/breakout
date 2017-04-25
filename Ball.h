@@ -13,55 +13,17 @@ public:
 	/// the current moving direction
 	float moveX = 250, moveY = 250;
 
-	static sf::Texture *getTexture()
-	{
-		static sf::Texture *texture = 0;
+	static sf::Texture *getTexture();
 
-		if (!texture)
-		{
-			texture = new sf::Texture;
-			texture->loadFromFile("ball.png");
-		}
+	Ball(World *world, float x, float y);
 
-		return texture;
-	}
-
-	Ball(World *world, float x, float y) :
-		GameObject(world, 0, rect_t(x, y, RADIUS * 2, RADIUS * 2))
-	{
-		setVisibleShape(new sf::RectangleShape(sf::Vector2f(RADIUS * 2, RADIUS * 2)));
-		getVisibleShape()->setTexture(getTexture());
-	}
-
-	void move(float time)
-	{
-		moveBy(moveX * time, moveY * time);
-	}
+	void move(float time);
 
 	/// the reaction of this ball when it touches something with its left side
-	void onTouchLeft()
-	{
-		if (moveX < 0)
-			moveX = -moveX;
-	}
-
-	void onTouchRight()
-	{
-		if (moveX > 0)
-			moveX = -moveX;
-	}
-
-	void onTouchTop()
-	{
-		if (moveY < 0)
-			moveY = -moveY;
-	}
-
-	void onTouchBottom()
-	{
-		if (moveY > 0)
-			moveY = -moveY;
-	}
+	void onTouchLeft();
+	void onTouchRight();
+	void onTouchTop();
+	void onTouchBottom();
 
 private:
 	float jumpBy = PIXEL_SIZE;

@@ -7,7 +7,7 @@ int main()
 	int width = 800, height = 600;
 	sf::RenderWindow window(sf::VideoMode(width, height), "breakout!");
 
-	World world(width, height);
+	World world((float)width, (float)height);
 
 	sf::Clock clock;
 	float currentTime = clock.getElapsedTime().asSeconds();
@@ -46,16 +46,8 @@ int main()
 
 		window.clear();
 		
-		if (gameover || !world.update(sinceLastFrame))
-		{
-			gameover = true;
-
-			sf::Text text;
-			text.setString("Game over.");
-			text.setPosition(width / 2, height / 2);
-			text.setColor(sf::Color(250, 100, 100));
-			window.draw(text);
-		}
+		if (!gameover)
+			gameover = !world.update(sinceLastFrame);
 
 		world.draw(&window);
 

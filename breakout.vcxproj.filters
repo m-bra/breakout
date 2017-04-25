@@ -21,21 +21,24 @@
     <ClCompile Include="Word.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameObject.h">
-      <Filter>Quelldateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Rectangle.h">
-      <Filter>Quelldateien</Filter>
+    <ClInclude Include="main.h">
+      <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Ball.h">
-      <Filter>Quelldateien</Filter>
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="World.h">
-      <Filter>Quelldateien</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

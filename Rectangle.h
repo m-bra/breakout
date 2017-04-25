@@ -21,15 +21,9 @@ typedef struct Rectangle
 		this->height = height;
 	}
 
-	float right()
-	{
-		return x + width;
-	}
+	float right() { return x + width; }
 
-	float bottom()
-	{
-		return y + height;
-	}
+	float bottom() { return y + height; }
 
 	bool touches(Rectangle b)
 	{
